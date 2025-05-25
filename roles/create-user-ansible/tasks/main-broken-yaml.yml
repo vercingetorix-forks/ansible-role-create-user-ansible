@@ -1,0 +1,44 @@
+---
+- name: Add user | Debian based OS
+  user:
+    name: "{{ username }}"
+    groups: sudo,shadow
+    shell: /bin/bash
+    append: yes
+    generate_ssh_key: yes
+    ssh_key_bits: 4096
+    ssh_key_file: .ssh/id_rsa
+  when: ansible_os_family == "Debian"
+
+- name: Add user | Redhat based OS
+  user:
+    name: "{{ username }}"
+    groups: wheel
+    shell: /bin/bash
+    append: yes
+    generate_ssh_key: yes
+    ssh_key_bits: 4096
+    ssh_key_file: .ssh/id_rsa
+  when: ansible_os_family == "RedHat"
+
+- name: Sudo | add to sudoers file and validate
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^{{ username }} '
+#    line: '{{username}} ALL=(ALL) NOPASSWD:ALL'
+#    Allowing NOPASSWD:ALL is unwise, find best practice for Ansible
+#    It is a conundrum to allow automated remote system administration without use of all root commands.
+#    This example restricts to package installation via apt
+#    line: "{{ username }} ALL=(ALL) {{ 'NOPASSWD:' if ( default_sudo_nopass|d(true)|bool ) else '' }}/usr/bin/apt-get"
+     line: "{{ username }} ALL=(ALL) {{ 'NOPASSWD:' if ( default_sudo_nopass|d(true)|bool ) else '' }}ALL"
+     validate: 'visudo -cf %s'
+  environment:
+    PATH: /usr/sbin:/usr/local/sbin:/sbin
+#environment fixes Redhat issue of hard-coded path to visudo
+
+- name: SSH Keys | Add authorized key for ssh key authentication
+  authorized_key:
+    user: "{{ username }}"
+    state: present
+    key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_ed25519.pub') }}"
