@@ -31,7 +31,7 @@
 #    It is a conundrum to allow automated remote system administration without use of all root commands.
 #    This example restricts to package installation via apt
 #    line: "{{ username }} ALL=(ALL) {{ 'NOPASSWD:' if ( default_sudo_nopass|d(true)|bool ) else '' }}/usr/bin/apt-get"
-     line: "{{ username }} ALL=(ALL) {{ 'NOPASSWD:' if ( default_sudo_nopass|d(true)|bool ) else '' }}ALL"
+    line: "{{ username }} ALL=(ALL) {{ 'NOPASSWD:' if ( default_sudo_nopass|d(true)|bool ) else '' }}ALL"
     validate: 'visudo -cf %s'
   environment:
     PATH: /usr/sbin:/usr/local/sbin:/sbin
