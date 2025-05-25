@@ -1,0 +1,47 @@
+PLAY [alldev] ******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+fatal: [lxc-ansible-1]: FAILED! => {"msg": "to use the 'ssh' connection type with passwords or pkcs11_provider, you must install the sshpass program"}
+
+PLAY RECAP *********************************************************************
+lxc-ansible-1              : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+
+####################################################################################################
+
+PLAY [alldev] ******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+fatal: [lxc-ansible-1]: FAILED! => {"msg": "Timeout (12s) waiting for privilege escalation prompt: "}
+
+PLAY RECAP *********************************************************************
+lxc-ansible-1              : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+####################################################################################################
+
+####################################################################################################
+SSH password: 
+BECOME password[defaults to SSH password]: 
+
+PLAY [alldev] **************************************************************************************************************************************************
+
+TASK [Gathering Facts] *****************************************************************************************************************************************
+[WARNING]: Platform linux on host lxc-ansible-1 is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python
+interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [lxc-ansible-1]
+
+TASK [create-user-ansible : Add user | Debian based OS] ********************************************************************************************************
+changed: [lxc-ansible-1]
+
+TASK [create-user-ansible : Add user | Redhat based OS] ********************************************************************************************************
+skipping: [lxc-ansible-1]
+
+TASK [create-user-ansible : Sudo | add to sudoers file and validate] *******************************************************************************************
+changed: [lxc-ansible-1]
+
+TASK [create-user-ansible : SSH Keys | Add authorized key for ssh key authentication] **************************************************************************
+fatal: [lxc-ansible-1]: FAILED! => {"msg": "The 'file' lookup had an issue accessing the file '/home/astephen/.ssh/id_rsa.pub'. file not found, use -vvvvv to see paths searched"}
+
+PLAY RECAP *****************************************************************************************************************************************************
+lxc-ansible-1              : ok=3    changed=2    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   

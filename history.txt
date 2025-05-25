@@ -1,0 +1,326 @@
+    1  id
+    2  python3 -m pip -V
+    3  pip
+    4  python3 -m venv ansible
+    5  source ansible/bin/activate
+    6  python3 -m pip install --upgrade ansible
+    7  bash --version
+    8  source ansible/bin/activate
+    9  activate-global-python-argcomplete --user
+   10  cat .bashrc 
+   11  ls
+   12  less .bash_completion 
+   13  ansible --version
+   14  ansible-community --version
+   15  ls
+   16  cd ansible/bin/
+   17  ls
+   18  ls -l
+   19  echo $PATH 
+   20  source ./activate
+   21  which ansible
+   22  ansible -v
+   23  ansible --version
+   24  cd
+   25  ls
+   26  echo "ansible is the python venv" > README.md
+   27  mkdir ansible_quickstart && cd $_
+   28  ssh lxc-ansible-1
+   29  cd
+   30  ls
+   31  ssh-keygen 
+   32  ssh-copy-id lxc-ansible-1
+   33  pwd
+   34  ls
+   35  cd ansible
+   36  cd ../ansible_quickstart/
+   37  vim inventory.ini
+   38  ansible-inventory -i inventory.ini --list
+   39  ansible myhosts -m ping -i inventory.ini
+   40  cp inventory.ini inventory.yaml
+   41  vim inventory.yaml 
+   42  ansible myhosts -m ping -i inventory.yaml 
+   43  ls
+   44  vim README.md
+   45  vim hello_world_playbook.yaml
+   46  ansible-playbook -i inventory.yaml hello_world_playbook.yaml 
+   47  cd 
+   48  mkdir ansible_sandbox
+   49  cd ansible_sandbox/
+   50  mkdir orjangj.editors
+   51  cd orjangj.editors/
+   52  ansible-galaxy collection install orjangj.editors -p ./collections
+   53  ls
+   54  ls -l
+   55  ls collections/
+   56  ls collections/ansible_collections/
+   57  find .
+   58  less ../../ansible_quickstart/hello_world_playbook.yaml 
+   59  history
+   60  history > history.2025-01-12
+   61  which ansible
+   62  ls
+   63  ls ansible
+   64  ls ansible/bin/
+   65  source ansible/bin/activate
+   66  which ansible
+   67  ls
+   68  cd
+   69  ls
+   70  pwd
+   71  cd ansible_quickstart/
+   72  ls
+   73  cat inventory.
+   74  cat inventory.yaml 
+   75  history | grep ansible
+   76  ansible myhosts -m ping -i inventory.yaml 
+   77  pwd
+   78  cd ..
+   79  ls
+   80  cd ansible_sandbox/
+   81  cd ..
+   82  ls
+   83  mkdir ansible_pve
+   84  cd ansible
+   85  cd ../ansible_pve/
+   86  vim setup_pve_container.yml
+   87  cd ..
+   88  ls
+   89  cd ansible_quickstart/
+   90  ls
+   91  ls -l
+   92  less hello_world_playbook.yaml 
+   93  history | grep ansible
+   94  ls
+   95  ansible-playbook -i inventory.yaml hello_world_playbook.yaml 
+   96  ansible-playbook -i inventory.yaml hello_world_playbook.yaml -e "msg=Test"
+   97  ls
+   98  cp hello_world_playbook.yaml variable_hw_playbook.yaml
+   99  vim variable_hw_playbook.yaml 
+  100  ansible-playbook -i inventory.yaml variable_hw_playbook.yaml -e "msg=Test"
+  101  cat variable_hw_playbook.yaml 
+  102  ansible-playbook -i inventory.yaml variable_hw_playbook.yaml -e "message=Test"
+  103  ansible-playbook -i inventory.yaml variable_hw_playbook.yaml -v -e "message=Test"
+  104  ansible-playbook -v -i inventory.yaml variable_hw_playbook.yaml -v -e "message=Test"
+  105  ls
+  106  cd ..
+  107  ls
+  108  cd ansible_pve/
+  109  ls
+  110  cp setup_pve_container.yml README.md
+  111  vim README.md 
+  112  vim create_ct_minimal.yaml
+  113  ping pve
+  114  ping beorn
+  115  ping 192.168.1.33
+  116  ifconfig
+  117  ssh 192.168.1.33
+  118  ssh beorn
+  119  ssh pve
+  120  nslookup 
+  121  ls
+  122  vim create_ct_minimal.yaml 
+  123  ls
+  124  cp ../ansible_quickstart/inventory.yaml .
+  125  vim inventory.yaml 
+  126  ansible-playbook -i inventory.yaml create_ct_minimal.yaml 
+  127  vim create_ct_minimal.yaml 
+  128  history | grep install
+  129  pwd
+  130  cd ..
+  131  ls
+  132  find . -name collections
+  133  cd ansible_sandbox/
+  134  ansible-galaxy collection install community.general.proxmox -p ./collections
+  135  ansible-galaxy collection install proxmox 
+  136  ansible-galaxy collection list 
+  137  ansible-galaxy collection list  | grep community.general
+  138  ansible-galaxy collection list  
+  139  ansible-galaxy collection list community.general
+  140  ls
+  141  cd ..
+  142  ls
+  143  cd ansible_pve/
+  144  cp ../ansible_quickstart/hello_world_playbook.yaml ./
+  145  ls
+  146  cat hello_world_playbook.yaml 
+  147  cat create_ct_minimal.yaml 
+  148  ansible-playbook -i inventory.yaml create_ct_minimal.yaml 
+  149  vim create_ct_minimal.yaml 
+  150  ansible-playbook -i inventory.yaml create_ct_minimal.yaml 
+  151  cat inventory.yaml 
+  152  ls -l ~/.ssh/
+  153  ssh-copy-id astephen@192.168.1.33
+  154  ansible-playbook -i inventory.yaml create_ct_minimal.yaml 
+  155  ansible-galaxy collection install proxmoxer
+  156  ansible-galaxy collection install community.general.proxmoxer
+  157  which pip
+  158  pip install proxmocer
+  159  pip install proxmoxer
+  160  ansible-playbook -i inventory.yaml create_ct_minimal.yaml 
+  161  pwd
+  162  ls
+  163  less history.2025-01-12 
+  164  pwd
+  165  ls
+  166  source ansible/bin/activate
+  167  ping lxc-test-1
+  168  ls
+  169  which ansible
+  170  source ansible/bin/activate
+  171  ls
+  172  cd ansible_quickstart/
+  173  ls
+  174  ansible myhosts -m ping -i inventory.ini 
+  175  less inventory.ini 
+  176  less hello_world_playbook.yaml 
+  177  ansible myhosts -m debug -i inventory.ini 
+  178  rdd bstq
+  179  less variable_hw_playbook.yaml 
+  180  less hello_world_playbook.yaml 
+  181  vim hello_world_playbook.yaml 
+  182  ansible myhosts -m debug -i inventory.ini 
+  183  less inventory.
+  184  less inventory.ini 
+  185  ls -l
+  186  less inventory.
+  187  less inventory.yaml 
+  188  less hello_world_playbook.yaml 
+  189  less variable_hw_playbook.yaml 
+  190  less hello_world_playbook.yaml 
+  191  vim hello_world_playbook.yaml 
+  192  ansible myhosts -m debug -i inventory.ini 
+  193  vim hello_world_playbook.yaml 
+  194  vim *.yaml
+  195  ansible myhosts -m debug -i inventory.ini 
+  196  man ansible
+  197  ansible --help
+  198  pwd
+  199  ls
+  200  ls -l
+  201  lesas README.md 
+  202  less README.md 
+  203  pwd
+  204  l
+  205  ping 8.8.8.8
+  206  ansible myhosts -i inventory.ini hello_world_playbook.yaml 
+  207  less hello_world_playbook.yaml 
+  208  vim hello_world_playbook.yaml 
+  209  ansible myhosts -i inventory.ini hello_world_playbook.yaml 
+  210  ansible myhosts -i inventory.ini hello_world_playbook.yaml -m debug
+  211  vim hello_world_playbook.yaml 
+  212  ansible myhosts -i inventory.ini hello_world_playbook.yaml 
+  213  ansible myhosts -i inventory.ini hello_world_playbook.yaml |less
+  214  ansible myhosts -i inventory.ini hello_world_playbook.yaml2>&1 |less
+  215  ansible myhosts -i inventory.ini hello_world_playbook.yaml
+  216  ansible myhosts -i inventory.ini -m debug
+  217  ansible myhosts -i inventory.ini -m debug hello_world_playbook.yaml 
+  218  ansible 
+  219  ansible-test 
+  220  ansible-test debug
+  221  pwd
+  222  ls
+  223  less README.md 
+  224  cd ..
+  225  ls
+  226  mkdir ansible-vm-basics
+  227  cd ansible-vm-basics/
+  228  mkdir -p inventory/vm-setup-playbook
+  229  vim inventory/vm-setup-playbook/hosts
+  230  ls
+  231  mkdir -p roles/python/tasks
+  232  vim roles/python/tasks/main.yml
+  233  ls
+  234  ls roles/
+  235  lsipc 
+  236  ls inventory/
+  237  vim vm-setup-playbook.yml
+  238  vim roles/python/tasks/main.yml 
+  239  ssh lxc-ansible-1
+  240  id
+  241  ssh lxc-ansible-1
+  242  ansible-playbook --inventory inventory/vm-setup-playbook/hosts vm-setup-playbook.yml 
+  243  ssh lxc-ansible-1
+  244  which ansible
+  245  source ansible/bin/activate
+  246  ls
+  247  mkdir ansible-ansible-user-create
+  248  cd ansible-ansible-user-create/
+  249  git clone https://github.com/vercingetorix-forks/ansible-role-create-user-ansible
+  250  sudo apt install git
+  251  sudo apt-get update
+  252  sudo apt install git
+  253  pwd
+  254  ls
+  255  git clone https://github.com/vercingetorix-forks/ansible-role-create-user-ansible
+  256  cd ansible-role-create-user-ansible/
+  257  ls
+  258  export PS1="astephen >"
+  259  ls
+  260  export PS1="astephen # "
+  261  ls
+  262  find .
+  263  ls
+  264  find defaults/
+  265  find tasks/
+  266  ls ../
+  267  ls
+  268  cd ..
+  269  ls
+  270  cd ..
+  271  ls
+  272  cd ansible-ansible-user-create/
+  273  ls
+  274  cd ansible-role-create-user-ansible/
+  275  ls
+  276  cd ..
+  277  ls
+  278  vim hosts
+  279  pwd
+  280  ssh lxc-ansible-1 date
+  281  ls
+  282  cat hosts 
+  283  ansible lxc-ansible-1 -a "date"
+  284  ansible ansible-1 -a "date"
+  285  ls
+  286  ansible ansible-1 -a "date" -i hosts
+  287  find . -name "create-user-ansible.yml"
+  288  ls
+  289  pwd
+  290  mv hosts ansible-role-create-user-ansible/
+  291  ls
+  292  cd ansible-role-create-user-ansible/
+  293  ls
+  294  vim hosts 
+  295  history 
+  296  ansible a1 -a "date" -i hosts
+  297  cat hosts 
+  298  vi hosts 
+  299  ansible a1 -a "date" -i hosts
+  300  ansible alldev -a "date" -i hosts
+  301  vim create-user-ansible.yml
+  302  ansible-playbook create-user-ansible.yml --ask-pass --become --become-method=su --ask-become-pass --extra-vars "inventory=alldev ansible_ssh_user=astephen username=ansible" -i hosts
+  303  ls
+  304  cd tasks/
+  305  ls
+  306  less main.yml 
+  307  grep create-user-ansible *
+  308  pwd
+  309  cd ..
+  310  ls
+  311  git status
+  312  pwd
+  313  ls
+  314  cd ..
+  315  ls
+  316  pwd
+  317  ls
+  318  cd ansible-role-create-user-ansible/
+  319  ls
+  320  less create-user-ansible.yml 
+  321  ls
+  322  mkdir -p roles/create-user-ansible
+  323  mv defaults/ tasks/ LICENSE README.md roles/create-user-ansible/
+  324  #ansible-playbook create-user-ansible.yml --ask-pass --become --become-method=su --ask-become-pass --extra-vars "inventory=alldev ansible_ssh_user=astephen username=ansible" -i hosts
+  325  history
+  326  history > history.txt
